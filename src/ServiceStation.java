@@ -7,14 +7,12 @@ public class ServiceStation implements Service {
             car.checkEngine();
         System.out.println();
     }
-
     @Override
     public void check(Bicycle bike) {
         System.out.println("Обслуживаем " + bike.getModelName());
         checking(bike);
         System.out.println();
     }
-
     @Override
     public void check(Truck truck) {
             System.out.println("Обслуживаем " + truck.getModelName());
@@ -23,10 +21,9 @@ public class ServiceStation implements Service {
             truck.checkTrailer();
         System.out.println();
     }
-
-    private void checking(Car car) {
-        for (int i = 0; i < car.getWheelsCount(); i++) {
-            car.updateTyre();
+    private void checking(Transport transport) {
+        for (int i = 0; i < transport.getWheelsCount(); i++) {
+            transport.updateTyre();
         }
     }
 }
